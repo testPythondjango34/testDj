@@ -1,0 +1,286 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour_agent.ru</title>
+    <link rel="stylesheet" href="{% static 'css/indexStyle.css' %}"/>
+</head>
+<body>
+    {% block content %}
+    <header>
+        <div class="header">
+            <ul>
+                <li><a href="">горящие туры</a></li>
+                <li><a>поиск отелей</a></li>
+                <li><a>поиск туров</a></li>
+                <li><a>отдых в России</a></li>
+                <li><a>о нас</a></li>
+                <li><a> еще...</a></li>
+            </ul>
+            <select>
+                <option>Владимир</option>
+                <option>Москва</option>
+                <option>Санкт-Петербург</option>
+            </select>
+            <div class="header_a">
+            <a>войти в личный кабинет</a>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="main_header">
+            <div class="main_header_first"> 
+                <h1>Tour_agent.ru</h1>
+                <a>инетрнет-магазин туров</a>
+
+            </div >
+            <div class="main_header_second">
+                <img/>
+                <div class="main_header_second_a">
+                    <a id="first">частые вопросы</a> <br/>
+                    <a id="second">оплата, гарантии и т.д</a>
+                </div>
+            </div>
+            <div class="main_header_third">
+                <button>купить тур в офисе</button>
+            </div>
+            <div class="main_header_fourth">
+                <img/>
+                <a>участник</a>
+            </div>
+        </div>
+        <div class="main_content">
+            <h1>выбирайте и покупайте туры онлайн</h1>
+            <h3>по ценам туроператоров или ниже</h3><br/>
+            <h3>с поддержкой до и после покупки</h3>
+        </div>
+        <div class="bron">
+            <form method="post" action="">
+                <div class="bronItem">
+                    <img/>
+                    <div class="bronItemName">
+                        <span>страна, курорт или отель</span> <br>
+                        <input type="text" value="Египет" name="coutry">
+                    </div>
+                </div>
+                <div class="bronItem">
+                    <img/>
+                    <div class="bronItemName">
+                        <span>дата вылета</span><br>
+                        <input type="text" value="с 17.12 +- 1 день" name="date">
+                    </div>
+                   
+                </div>
+                <div class="bronItem">
+                    <img/>
+                    <div class="bronItemName">
+                        <span>количество ночей</span><br>
+                        <input type="text" value="на 7-8 ночей" name="nights">
+                    </div>
+                </div>
+                <div class="bronItem">
+                    <img/>
+                    <div class="bronItemName">
+                        <span>туристы</span><br>
+                        <input type="text"  value="2 взрослых" name="tourists">
+                    </div>
+                </div>
+                <input type="button" value="искать" id="post" name="submit">
+            </form>
+        </div>
+    </div>
+    <div class="sponsor_block">
+        <img src="" alt=""/>
+        <img src="" alt=""/>
+        <img src="" alt=""/>
+        <img src="" alt=""/>
+        <button>
+            рейтинг туроператоров
+        </button>
+    </div>
+    <div class="calendar">
+        <h1>календарь низких цен</h1>
+        <a id="town_label">город вылета:</a>
+        <a id="chose_town">Москва</a>
+        <div class="countries"> 
+            <a href="">Турция</a>
+            <a href="">Египет</a>
+            <a href="">Россия</a>
+            <a href="">ОАЭ</a>
+            <a href="">Таиланд</a>
+            <a href="">Куба</a>
+            <a href="">Шри-Лана</a>
+            <a href="">Индия</a>
+            <a href="">Мальдивы</a>
+        </div>
+        <a id="all_side">все направления -></a>
+    </div>
+    <div>
+        календарь
+    </div>
+    {% for i in data %}
+        <a>{{i}}</a>
+    {% endfor %}
+    <div class="popular_side">
+        <h1>популярные направления</h1>
+        <div class="popular_side_carts">
+            <div class="popular_side_card">
+                <img src="{% static 'images/turkeybackground.jpg' %}"/>
+                <div class="description">
+                    <h3>Турция</h3>
+                    <span>Без визы</span>
+                    <img src="{% static 'images/turkeyflag.png' %}"/>
+                </div>
+                <a href="">Даламан,</a>
+                <a href="">Аланья,</a>
+                <a href="">Анталья</a>
+                <br>
+                <span>от 29 447 руб./чел</span>
+            </div>
+            <div class="popular_side_card">
+                <img src="{% static 'images/египет.jpg' %}"/>
+                <div class="description">
+                    <h3>Египет</h3>
+                    <span>Без визы</span>
+                    <img src="{% static 'images/egyptflag.png' %}"/>
+                </div>
+                <a href="">Каир,</a>
+                <a href="">Шарм-Эль-Шейх,</a>
+                <a href="">Хургада</a>
+                <br>
+                <span>от 39 828 руб./чел</span>
+            </div>
+            <div class="popular_side_card">
+                <img src="{% static 'images/сочи.jpg' %}"/>
+                <div class="description">
+                    <h3>Россия</h3>
+                    <span>Без визы</span>
+                    <img src="{% static 'images/flagrussian.png' %}"/>
+                </div>
+                <a href="">Сочи,</a>
+                <a href="">Дербент,</a>
+                <a href="">Каспийск</a>
+                <br>
+                <span>от 14 930 руб./чел</span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div class="left_side_footer">
+            <div class="left_side_footer_up">
+                <div class="footer_context">
+                    <h2>о компании</h2>
+                    <ul>
+                        <li><a>Офисы продаж</a></li>
+                        <li><a>о компании</a></li>
+                        <li><a>о нас</a></li>
+                        <li><a>пресса о нас</a></li>
+                        <li><a>отзывы о нас</a></li>
+                        <li><a>наши партнеры</a></li>
+                        <li><a>реквизиты</a></li>
+                        <li><a>вакансии</a></li>
+                        <li><a>контакты</a></li>
+                        <li><a>для журналистов</a></li>
+                    </ul>
+    
+    
+                </div>
+                <div>
+                    <h2>партнерам</h2>
+                    <ul>
+                        <li><a>партнерсая программа</a></li>
+                    </ul>
+                </div>
+        </div>
+        <div class="left_side_footer_down">
+            <div>
+                <h2>туристам</h2>
+                <ul>
+                    <li><a>пользовательское соглашение</a></li>
+                    <li><a>правила покупки</a></li>
+                    <li><a>как кпуить тур</a></li>
+                    <li><a>частые вопросы</a></li>
+                    <li><a>обратная связь</a></li>
+                    <li><a>туры в рассрочку</a></li>
+                    <li><a>стахование</a></li>
+                    <li><a>горнолыжные туры</a></li>
+                    <li><a>договор</a></li>
+                    <li><a>атлас</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a>правила распростанения и использования промокодов и/или купонов</a></li>
+                    <li><a>Соглашение о конфиденциальности</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <div class="middle_side_footer">
+            <h2>партнеры</h2>
+            <div>
+                <div><img/></div>
+                <div><img/></div>
+                <div><img/></div>
+            </div>
+            <div>
+                <div><img/></div>
+                <div><img/></div>
+            </div>
+            <div>
+                <div><img/></div>
+                <div><img/></div>
+                <div><img/></div>
+            </div>
+            <h2>мы в социальных сетях:</h2>
+            <div>
+                <button id="ok"></button>
+                <button id="vk"></button>
+                <button id="vb"></button>
+                <button id="tg"></button>
+            </div>
+            <h2 id="download_app">все туры в одном приложении</h2>
+            <div class="buttons">
+                <div class="button_download">
+                    <img/>
+                    <div>
+                        <span>скачать из</span>
+                        <br/>
+                        <a id="as">App Store</a>
+                    </div>
+                </div>
+                <div class="button_download">
+                    <img/>
+                    <div>
+                        <span>скачать из</span>
+                        <a id="gp">Google Play</a>
+                    </div>
+                </div>
+            </div>
+            <div class="links">
+                <h2>блог</h2>
+                <h2>карта сайта</h2>
+            </div>
+        </div>
+        <div class="right_side_footer">
+            <h2>Tour_agent.ru</h2>
+            <div>
+                <img/>
+                <h3>8 (800) 438-10-73</h3>
+                <br/>
+                <span>бесплатный звонок 24 часа</span>
+                <span>Tour_agent.ru - это туристическая компания нового поколения. Мы используем все доступные сегодня технологии, чтобы сделать выбор, оплату и бронирование Вашего путешествия максимально удобными и приятными.</span>
+                <span id="mobile_version">мобильная версия</span>
+                <br/>
+                <span>2011-2023 @Tour_agent</span>
+                <h3>участник проекта "Сколково"</h3>
+                <img/>
+            </div>
+        </div>
+    </footer>
+    {% endblock %}
+</body>
+</html>
