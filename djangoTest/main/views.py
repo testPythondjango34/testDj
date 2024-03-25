@@ -12,8 +12,28 @@ def mainPage(request):
     WHERE Towns.id_country = Counries.id
     ''')
     data = cursor.fetchall()
+    towns= []
+    countries = []
+    for i in data:
+        if i[0] in countries:
+            continue
+        else:
+            countries.append(i[0])
+    for i in range(len(countries)):
+        a=[]
+        for j in range(len(data)):
+            if countries[i] == data[j][0]:
+                a.append(data[j][1])
+        towns.append(a)
+    dct = {}
+    for i in range(len(countries)):
+        dct[countries[i]] = towns[i]
+    # count = []
+    # for i in range(len(countries)):
+    #     count.append(i)
+
     connect.close()
-    return render(request, 'main/index.html', {'data': data})
+    return render(request, 'main/index.html', {'towns' : towns, 'countries' : countries})
 
 
 # def postForm(request):
