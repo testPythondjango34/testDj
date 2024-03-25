@@ -120,51 +120,57 @@
     <div>
         календарь
     </div>
-    {% for i in data %}
-        <a>{{i}}</a>
-    {% endfor %}
+<!--    {% for i in towns %}-->
+<!--    {% if i == "Анкара" %}-->
+<!--    <a href="">{{i}},</a>-->
+<!--    {% endif %}-->
+<!--    {% endfor %}-->
     <div class="popular_side">
         <h1>популярные направления</h1>
         <div class="popular_side_carts">
+            {% for i in countries %}
             <div class="popular_side_card">
                 <img src="{% static 'images/turkeybackground.jpg' %}"/>
                 <div class="description">
-                    <h3>Турция</h3>
+                    <h3>{{i}}</h3>
                     <span>Без визы</span>
                     <img src="{% static 'images/turkeyflag.png' %}"/>
                 </div>
-                <a href="">Даламан,</a>
-                <a href="">Аланья,</a>
-                <a href="">Анталья</a>
-                <br>
+                {% for j in towns.0 %}
+                <a href="">{{j}},</a>
+                {% endfor %}
+<!--                <a href="">Аланья,</a>-->
+<!--                <a href="">Анталья</a>-->
+                <br/>
                 <span>от 29 447 руб./чел</span>
             </div>
-            <div class="popular_side_card">
-                <img src="{% static 'images/египет.jpg' %}"/>
-                <div class="description">
-                    <h3>Египет</h3>
-                    <span>Без визы</span>
-                    <img src="{% static 'images/egyptflag.png' %}"/>
-                </div>
-                <a href="">Каир,</a>
-                <a href="">Шарм-Эль-Шейх,</a>
-                <a href="">Хургада</a>
-                <br>
-                <span>от 39 828 руб./чел</span>
-            </div>
-            <div class="popular_side_card">
-                <img src="{% static 'images/сочи.jpg' %}"/>
-                <div class="description">
-                    <h3>Россия</h3>
-                    <span>Без визы</span>
-                    <img src="{% static 'images/flagrussian.png' %}"/>
-                </div>
-                <a href="">Сочи,</a>
-                <a href="">Дербент,</a>
-                <a href="">Каспийск</a>
-                <br>
-                <span>от 14 930 руб./чел</span>
-            </div>
+            {% endfor %}
+<!--          <div class="popular_side_card">-->
+<!--                <img src="{% static 'images/египет.jpg' %}"/>-->
+<!--                <div class="description">-->
+<!--                    <h3>Египет</h3>-->
+<!--                    <span>Без визы</span>-->
+<!--                    <img src="{% static 'images/egyptflag.png' %}"/>-->
+<!--                </div>-->
+<!--                <a href="">Каир,</a>-->
+<!--                <a href="">Шарм-Эль-Шейх,</a>-->
+<!--                <a href="">Хургада</a>-->
+<!--                <br>-->
+<!--                <span>от 39 828 руб./чел</span>-->
+<!--            </div>-->
+<!--            <div class="popular_side_card">-->
+<!--                <img src="{% static 'images/сочи.jpg' %}"/>-->
+<!--                <div class="description">-->
+<!--                    <h3>Россия</h3>-->
+<!--                    <span>Без визы</span>-->
+<!--                    <img src="{% static 'images/flagrussian.png' %}"/>-->
+<!--                </div>-->
+<!--                <a href="">Сочи,</a>-->
+<!--                <a href="">Дербент,</a>-->
+<!--                <a href="">Каспийск</a>-->
+<!--                <br>-->
+<!--                <span>от 14 930 руб./чел</span>-->
+<!--            </div>-->
         </div>
     </div>
     </div>
